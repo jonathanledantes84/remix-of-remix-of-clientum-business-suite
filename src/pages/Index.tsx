@@ -59,7 +59,7 @@ export default function Index() {
                   Comenzar ahora <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5492984510883" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base">
                   Consultar por WhatsApp
                 </Button>
@@ -156,7 +156,7 @@ export default function Index() {
               <Link to="/planes">
                 <Button size="lg" className="shadow-hero">Solicitar Demo Gratuita</Button>
               </Link>
-              <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5492984510883" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline">Hablar con un Asesor</Button>
               </a>
             </div>

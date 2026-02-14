@@ -26,10 +26,8 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-sm font-bold text-primary-foreground">C</span>
-          </div>
-          <span className="font-display text-xl font-bold tracking-tight text-foreground">CLIENTUM</span>
+          <img src="/logo.png" alt="Clientum" className="h-9 w-9 rounded-lg" />
+          <span className="font-display text-xl font-bold tracking-tight text-foreground">Clientum</span>
         </Link>
 
         {/* Desktop */}
