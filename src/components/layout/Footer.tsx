@@ -32,10 +32,10 @@ const columns = [
   {
     title: "Contacto",
     links: [
-      { label: "info@clientum.com.ar", to: "mailto:info@clientum.com.ar" },
-      { label: "+54 11 1234-5678", to: "tel:+541112345678" },
-      { label: "Buenos Aires, Argentina", to: "/" },
-      { label: "WhatsApp", to: "https://wa.me/5491112345678" },
+      { label: "clientumlatam@proton.me", to: "mailto:clientumlatam@proton.me" },
+      { label: "+54 9 298 4510883", to: "tel:+5492984510883" },
+      { label: "Argentina", to: "/" },
+      { label: "WhatsApp", to: "https://wa.me/5492984510883" },
     ],
   },
 ];
@@ -48,10 +48,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-xs font-bold text-primary-foreground">C</span>
-              </div>
-              <span className="font-display text-lg font-bold text-foreground">CLIENTUM</span>
+              <img src="/logo.png" alt="Clientum" className="h-8 w-8 rounded-lg" />
+              <span className="font-display text-lg font-bold text-foreground">Clientum</span>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
               Plataforma integral de gestión empresarial para PyMEs argentinas.

@@ -4,8 +4,8 @@ import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 
-const WHATSAPP_NUMBER = "5491112345678";
-const EMAIL_TO = "info@clientum.com.ar";
+const WHATSAPP_NUMBER = "5492984510883";
+const EMAIL_TO = "clientumlatam@proton.me";
 
 export default function Contacto() {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" });
@@ -172,17 +172,17 @@ export default function Contacto() {
               <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
                 <h3 className="font-display text-lg font-semibold text-foreground">Información de Contacto</h3>
                 <div className="mt-4 space-y-4">
-                  <a href="mailto:info@clientum.com.ar" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <a href="mailto:clientumlatam@proton.me" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary">
                     <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>info@clientum.com.ar</span>
+                    <span>clientumlatam@proton.me</span>
                   </a>
-                  <a href="tel:+541112345678" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <a href="tel:+5492984510883" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary">
                     <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>+54 11 1234-5678</span>
+                    <span>+54 9 298 4510883</span>
                   </a>
                   <div className="flex items-start gap-3 text-sm text-muted-foreground">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Buenos Aires, Argentina</span>
+                    <span>Argentina</span>
                   </div>
                 </div>
               </div>
