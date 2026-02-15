@@ -1,0 +1,67 @@
+<div class="cl">
+
+<!-- NOTA: WordPress tiene su propio sistema de login. Este HTML es solo si querés replicar el diseño visualmente. -->
+
+<div style="display: flex; min-height: 80vh;">
+  <!-- Left panel (solo desktop) -->
+  <div style="display: none; width: 50%; background: linear-gradient(135deg, #111d2e, #1e3a5f, #4a6fa5); align-items: center; justify-content: center; padding: 3rem;" class="cl-login-left">
+    <div style="max-width: 28rem; text-align: center;">
+      <!-- Reemplazar con tu logo -->
+      <img src="/logo.png" alt="Clientum" style="height: 2.5rem; filter: brightness(0) invert(1); margin-bottom: 2rem;">
+      <h2 style="font-size: 1.875rem; font-weight: 700; color: white;">Tu plataforma de gestión empresarial</h2>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; line-height: 1.75;">CRM, ERP, BI y automatización en una sola plataforma diseñada para PyMEs argentinas.</p>
+      <div style="margin-top: 2.5rem; text-align: left;">
+        <div class="cl-flex cl-items-center cl-gap-3 cl-mb-4">
+          <div style="width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: white;">→</div>
+          <span style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Panel de control unificado</span>
+        </div>
+        <div class="cl-flex cl-items-center cl-gap-3 cl-mb-4">
+          <div style="width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: white;">→</div>
+          <span style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Reportes en tiempo real</span>
+        </div>
+        <div class="cl-flex cl-items-center cl-gap-3">
+          <div style="width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: white;">→</div>
+          <span style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Automatización inteligente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right panel (form) -->
+  <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: var(--cl-bg);">
+    <div style="width: 100%; max-width: 24rem;">
+      <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; background: var(--cl-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1rem; box-shadow: 0 8px 32px rgba(43,74,122,0.25);">🔑</div>
+      <h1 class="cl-text-2xl cl-font-bold">Bienvenido</h1>
+      <p class="cl-text-sm cl-text-muted cl-mt-2">Ingresá a tu panel de gestión</p>
+
+      <div class="cl-mt-8">
+        <div class="cl-mb-4">
+          <label class="cl-label">Email</label>
+          <input type="email" class="cl-input" placeholder="tu@empresa.com.ar">
+        </div>
+        <div class="cl-mb-4">
+          <label class="cl-label">Contraseña</label>
+          <input type="password" class="cl-input" placeholder="••••••••">
+        </div>
+        <button class="cl-btn cl-btn-primary cl-btn-lg cl-btn-full">Ingresar</button>
+      </div>
+
+      <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; background: var(--cl-muted); border-radius: 0.75rem; padding: 0.75rem 1rem;">
+        <span>🛡️</span>
+        <p class="cl-text-xs cl-text-muted">Conexión segura y encriptada</p>
+      </div>
+
+      <p class="cl-text-sm cl-text-muted cl-mt-8 cl-text-center">
+        ¿No tenés cuenta? <a href="/contacto" class="cl-text-primary cl-font-medium" style="text-decoration: underline;">Solicitá una demo</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (min-width: 1024px) {
+    .cl-login-left { display: flex !important; }
+  }
+</style>
+
+</div>
