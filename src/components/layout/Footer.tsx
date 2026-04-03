@@ -42,7 +42,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="surface-low">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
@@ -58,16 +58,16 @@ export default function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="mb-3 text-sm font-semibold text-foreground">{col.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="label-caps text-muted-foreground mb-4">{col.title}</h4>
+              <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     {link.to.startsWith("http") || link.to.startsWith("mailto") || link.to.startsWith("tel") ? (
-                      <a href={link.to} className="text-sm text-muted-foreground transition-colors hover:text-primary" target="_blank" rel="noopener noreferrer">
+                      <a href={link.to} className="text-sm text-muted-foreground transition-all duration-250 hover:text-primary" target="_blank" rel="noopener noreferrer">
                         {link.label}
                       </a>
                     ) : (
-                      <Link to={link.to} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                      <Link to={link.to} className="text-sm text-muted-foreground transition-all duration-250 hover:text-primary">
                         {link.label}
                       </Link>
                     )}
@@ -78,7 +78,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
+        <div className="mt-10 pt-6 text-center text-sm text-muted-foreground" style={{ borderTop: '1px solid hsl(215 15% 25% / 0.15)' }}>
           © {new Date().getFullYear()} Clientum. Todos los derechos reservados.
         </div>
       </div>
