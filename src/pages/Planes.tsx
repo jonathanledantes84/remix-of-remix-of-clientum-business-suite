@@ -25,19 +25,19 @@ export default function Planes() {
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground"
+            className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}
           >
             Precios transparentes
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-bold tracking-display text-foreground md:text-5xl lg:text-6xl"
           >
             Elegí el plan ideal para tu empresa
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80"
+            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
           >
             Sin costos ocultos. Escalá cuando quieras. Cancelá en cualquier momento.
           </motion.p>
@@ -54,9 +54,9 @@ export default function Planes() {
             <span className={`text-sm font-semibold transition-colors ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Mensual</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className={`relative h-8 w-16 rounded-full transition-colors ${annual ? "bg-primary" : "bg-muted"}`}
+              className={`relative h-8 w-16 rounded-full transition-colors ${annual ? "bg-primary" : "bg-surface-container"}`}
             >
-              <span className={`absolute top-1 h-6 w-6 rounded-full bg-card shadow-md transition-transform ${annual ? "translate-x-9" : "translate-x-1"}`} />
+              <span className={`absolute top-1 h-6 w-6 rounded-full bg-surface shadow-ambient transition-transform ${annual ? "translate-x-9" : "translate-x-1"}`} />
             </button>
             <span className={`text-sm font-semibold transition-colors ${annual ? "text-foreground" : "text-muted-foreground"}`}>
               Anual{" "}
@@ -76,12 +76,12 @@ export default function Planes() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className={`relative flex flex-col rounded-2xl border bg-card p-8 shadow-card transition-all hover:shadow-card-hover ${
-                  plan.popular ? "border-primary ring-2 ring-primary/20 lg:scale-105" : "border-border"
+                className={`relative flex flex-col rounded-2xl p-8 shadow-card transition-all duration-250 hover:shadow-card-hover ${
+                  plan.popular ? "surface-bright shadow-glow lg:scale-105" : "surface-high"
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-5 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-hero">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full gradient-primary px-5 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-hero">
                     Más Popular
                   </div>
                 )}
@@ -89,13 +89,13 @@ export default function Planes() {
                 <div className="mb-6">
                   <div className="flex items-center gap-2">
                     <Zap className={`h-5 w-5 ${plan.popular ? "text-primary" : "text-accent"}`} />
-                    <h3 className="text-lg font-bold tracking-wide text-foreground">{plan.name}</h3>
+                    <h3 className="font-display text-lg font-bold tracking-wide text-foreground">{plan.name}</h3>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold text-foreground">
+                    <span className="font-display text-4xl font-extrabold text-foreground">
                       {formatPrice(annual ? plan.annualPrice : plan.monthlyPrice)}
                     </span>
                     <span className="text-sm text-muted-foreground">/mes</span>
@@ -118,7 +118,7 @@ export default function Planes() {
 
                 <Link to="/contacto">
                   <Button
-                    className={`w-full ${plan.popular ? "shadow-hero" : ""}`}
+                    className="w-full"
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
                   >
@@ -132,7 +132,7 @@ export default function Planes() {
           {/* Trust strip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="mt-20 grid gap-8 rounded-2xl gradient-card border border-border p-10 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-20 grid gap-8 rounded-2xl surface-low p-10 sm:grid-cols-2 lg:grid-cols-4"
           >
             {[
               { icon: Shield, title: "30 días de garantía", desc: "Satisfacción garantizada o devolución total" },

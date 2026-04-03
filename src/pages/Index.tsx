@@ -58,7 +58,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 gradient-hero opacity-90" />
+          <div className="absolute inset-0 gradient-hero opacity-95" />
         </div>
         <div className="relative container mx-auto px-4 py-28 md:py-40">
           <motion.div
@@ -71,26 +71,26 @@ export default function Index() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-sm"
+              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl glass"
             >
               <img src={logo} alt="Clientum" className="h-10 w-10" />
             </motion.div>
 
-            <h1 className="font-display text-4xl font-bold leading-tight text-primary-foreground md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-4xl font-bold leading-tight tracking-display text-foreground md:text-6xl lg:text-7xl">
               Goberná tu empresa con{" "}
-              <span className="text-accent">datos confiables</span>
+              <span className="gradient-text">datos confiables</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80 md:text-xl">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl" style={{ lineHeight: 1.6 }}>
               Plataforma enterprise que integra ERP, CRM, ventas y operaciones en una única fuente de verdad para la toma de decisiones estratégicas.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link to="/contacto">
-                <Button size="lg" className="shadow-hero text-base px-8">
+                <Button size="lg" className="text-base px-8">
                   Solicitar demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <a href="https://wa.me/5492984510883" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
+                <Button size="lg" variant="outline" className="text-base px-8">
                   Consultar por WhatsApp
                 </Button>
               </a>
@@ -99,14 +99,14 @@ export default function Index() {
         </div>
 
         {/* Trusted by strip */}
-        <div className="relative border-t border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm">
+        <div className="relative glass">
           <div className="container mx-auto px-4 py-5">
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-              <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground/50">
+              <span className="label-caps text-muted-foreground">
                 Confían en nosotros
               </span>
               {trustedLogos.map((name) => (
-                <span key={name} className="text-sm font-semibold text-primary-foreground/40">
+                <span key={name} className="text-sm font-semibold text-muted-foreground/60">
                   {name}
                 </span>
               ))}
@@ -127,7 +127,7 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="rounded-2xl border border-border bg-card p-6 text-center shadow-card"
+                className="rounded-2xl surface-high p-6 text-center shadow-card transition-all duration-250 hover:bg-surface-bright"
               >
                 <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                   <m.icon className="h-6 w-6 text-primary" />
@@ -141,16 +141,14 @@ export default function Index() {
       </section>
 
       {/* Platform modules */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 surface-low">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-              Plataforma
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+            <span className="section-badge">Plataforma</span>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">
               Todo lo que necesitás en un solo lugar
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+            <p className="mx-auto mt-3 max-w-xl text-muted-foreground" style={{ lineHeight: 1.6 }}>
               Módulos integrados que trabajan juntos para darte visibilidad total de tu operación.
             </p>
           </motion.div>
@@ -163,9 +161,9 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="group rounded-2xl border border-border bg-card p-7 shadow-card transition-all hover:shadow-card-hover hover:-translate-y-1"
+                className="group rounded-2xl surface-high p-7 shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright hover:-translate-y-1"
               >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-250 group-hover:bg-primary/20">
                   <mod.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground">{mod.title}</h3>
@@ -181,10 +179,8 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-              <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                Industrias
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+              <span className="section-badge">Industrias</span>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">
                 Soluciones adaptadas a tu sector
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -208,8 +204,8 @@ export default function Index() {
             >
               {industries.map((ind, i) => (
                 <motion.div key={ind.name} custom={i} variants={fadeUp}>
-                  <Link to="/soluciones" className="group block rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:shadow-card-hover hover:-translate-y-1">
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  <Link to="/soluciones" className="group block rounded-2xl surface-high p-6 shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright hover:-translate-y-1">
+                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-250 group-hover:bg-primary/20">
                       <ind.icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="font-display text-base font-semibold text-foreground">{ind.name}</h3>
@@ -226,10 +222,10 @@ export default function Index() {
       <section className="gradient-hero py-24">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
-            <span className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">
+            <span className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}>
               Resultados
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-primary-foreground md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">
               Impacto medible en tu negocio
             </h2>
           </motion.div>
@@ -242,13 +238,13 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-8 text-center backdrop-blur-sm"
+                className="rounded-2xl glass p-8 text-center"
               >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl border border-primary-foreground/10 bg-primary-foreground/10">
-                  <imp.icon className="h-7 w-7 text-accent" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl glass">
+                  <imp.icon className="h-7 w-7 text-primary" />
                 </div>
-                <div className="font-display text-5xl font-bold text-primary-foreground">{imp.value}</div>
-                <div className="mt-2 text-primary-foreground/70">{imp.label}</div>
+                <div className="font-display text-5xl font-bold gradient-text">{imp.value}</div>
+                <div className="mt-2 text-muted-foreground">{imp.label}</div>
               </motion.div>
             ))}
           </div>
@@ -264,20 +260,20 @@ export default function Index() {
             viewport={{ once: true }}
             variants={fadeUp}
             custom={0}
-            className="rounded-3xl border border-border bg-card p-12 text-center shadow-card md:p-20"
+            className="rounded-3xl surface-high p-12 text-center shadow-ambient md:p-20"
           >
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
               <img src={logo} alt="" className="h-8 w-8" />
             </div>
-            <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            <h2 className="font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">
               ¿Listo para transformar tu empresa?
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-lg text-muted-foreground" style={{ lineHeight: 1.6 }}>
               Agendá una demo personalizada y descubrí cómo Clientum puede impulsar tu crecimiento con datos confiables.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link to="/contacto">
-                <Button size="lg" className="shadow-hero px-8">Solicitar Demo Gratuita</Button>
+                <Button size="lg" className="px-8">Solicitar Demo Gratuita</Button>
               </Link>
               <a href="https://wa.me/5492984510883" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="px-8">Hablar con un Asesor</Button>
