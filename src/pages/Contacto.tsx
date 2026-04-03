@@ -52,7 +52,7 @@ export default function Contacto() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const inputClass = "h-11 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-shadow";
+  const inputClass = "h-11 w-full rounded-xl surface-highest px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-250 border-0";
 
   return (
     <PageLayout>
@@ -61,19 +61,19 @@ export default function Contacto() {
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground"
+            className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}
           >
             Hablemos
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-bold tracking-display text-foreground md:text-5xl lg:text-6xl"
           >
             Contactanos
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80"
+            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
           >
             Solicitá una demo personalizada o consultanos cualquier duda sobre Clientum.
           </motion.p>
@@ -89,19 +89,19 @@ export default function Contacto() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
             >
               {sent ? (
-                <div className="rounded-2xl border border-border bg-card p-12 text-center shadow-card-hover">
+                <div className="rounded-2xl surface-high p-12 text-center shadow-card-hover">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
                     <Send className="h-8 w-8 text-success" />
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">¡Mensaje enviado!</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground">¡Mensaje enviado!</h2>
                   <p className="mt-2 text-muted-foreground">Nos pondremos en contacto con vos a la brevedad.</p>
                   <Button className="mt-6" onClick={() => { setSent(false); setForm({ name: "", company: "", email: "", phone: "", message: "" }); }}>
                     Enviar otro mensaje
                   </Button>
                 </div>
               ) : (
-                <div className="rounded-2xl border border-border bg-card p-8 shadow-card md:p-10">
-                  <h2 className="text-2xl font-bold text-foreground">Solicitar Demo</h2>
+                <div className="rounded-2xl surface-high p-8 shadow-card md:p-10">
+                  <h2 className="font-display text-2xl font-bold text-foreground">Solicitar Demo</h2>
                   <p className="mt-1 text-sm text-muted-foreground">Completá el formulario y elegí cómo contactarnos.</p>
 
                   <div className="mt-8 space-y-5">
@@ -133,14 +133,14 @@ export default function Contacto() {
                       <label className="mb-1.5 block text-sm font-medium text-foreground">Mensaje *</label>
                       <textarea
                         value={form.message} onChange={(e) => update("message", e.target.value)} maxLength={1000} rows={5}
-                        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-shadow"
+                        className="w-full rounded-xl surface-highest px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-250 border-0"
                         placeholder="Contanos qué necesitás: módulos de interés, tamaño de equipo, industria..."
                       />
                       {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
                     </div>
 
                     <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-                      <Button onClick={handleWhatsApp} className="flex-1 shadow-hero" size="lg">
+                      <Button onClick={handleWhatsApp} variant="whatsapp" className="flex-1" size="lg">
                         <MessageCircle className="mr-2 h-4 w-4" /> Enviar por WhatsApp
                       </Button>
                       <Button onClick={handleEmail} variant="outline" className="flex-1" size="lg">
@@ -157,10 +157,10 @@ export default function Contacto() {
               className="space-y-6 lg:col-span-2"
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
             >
-              <div className="rounded-2xl border border-border bg-card p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground">Información de Contacto</h3>
+              <div className="rounded-2xl surface-high p-8 shadow-card">
+                <h3 className="font-display text-lg font-bold text-foreground">Información de Contacto</h3>
                 <div className="mt-6 space-y-5">
-                  <a href="mailto:clientumlatam@proton.me" className="flex items-center gap-4 text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <a href="mailto:clientumlatam@proton.me" className="flex items-center gap-4 text-sm text-muted-foreground transition-all duration-250 hover:text-primary">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
@@ -169,7 +169,7 @@ export default function Contacto() {
                       <div className="font-medium text-foreground">clientumlatam@proton.me</div>
                     </div>
                   </a>
-                  <a href="tel:+5492984510883" className="flex items-center gap-4 text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <a href="tel:+5492984510883" className="flex items-center gap-4 text-sm text-muted-foreground transition-all duration-250 hover:text-primary">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
@@ -190,8 +190,8 @@ export default function Contacto() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground">¿Por qué elegirnos?</h3>
+              <div className="rounded-2xl surface-high p-8 shadow-card">
+                <h3 className="font-display text-lg font-bold text-foreground">¿Por qué elegirnos?</h3>
                 <ul className="mt-5 space-y-4">
                   {benefits.map(({ icon: Icon, text }) => (
                     <li key={text} className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -204,7 +204,7 @@ export default function Contacto() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl gradient-card border border-border p-8 text-center">
+              <div className="rounded-2xl surface-low p-8 text-center">
                 <p className="text-sm font-medium text-foreground">🔒 30 días de garantía</p>
                 <p className="mt-1 text-xs text-muted-foreground">Satisfacción garantizada o devolución total</p>
               </div>

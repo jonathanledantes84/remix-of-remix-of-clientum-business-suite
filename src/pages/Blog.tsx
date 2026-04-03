@@ -36,7 +36,6 @@ export default function Blog() {
     });
   }, [search, cat]);
 
-  // Featured post = first one
   const featured = blogPosts[0];
   const rest = filtered.filter((p) => p.id !== featured.id || cat !== "Todos" || search);
 
@@ -47,20 +46,20 @@ export default function Blog() {
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground"
+            className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}
           >
             <BookOpen className="mr-1.5 inline h-3.5 w-3.5" />
             Centro de Recursos
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-bold tracking-display text-foreground md:text-5xl lg:text-6xl"
           >
             Blog & Recursos
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80"
+            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
           >
             Guías prácticas, tendencias y estrategias para potenciar tu negocio.
           </motion.p>
@@ -73,16 +72,16 @@ export default function Blog() {
           <div className="container mx-auto px-4">
             <motion.article
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="grid overflow-hidden rounded-2xl border border-border bg-card shadow-card-hover md:grid-cols-2"
+              className="grid overflow-hidden rounded-2xl surface-high shadow-card-hover md:grid-cols-2"
             >
               <div className="flex items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 p-12">
                 <span className="text-8xl">{categoryIcons[featured.category] || "📄"}</span>
               </div>
               <div className="flex flex-col justify-center p-8 md:p-12">
-                <span className="inline-block w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                <span className="chip w-fit">
                   {featured.category}
                 </span>
-                <h2 className="mt-4 text-2xl font-bold text-foreground md:text-3xl">{featured.title}</h2>
+                <h2 className="mt-4 font-display text-2xl font-bold text-foreground md:text-3xl">{featured.title}</h2>
                 <p className="mt-3 text-muted-foreground">{featured.excerpt}</p>
                 <div className="mt-6 flex items-center gap-4">
                   <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -110,7 +109,7 @@ export default function Blog() {
                 placeholder="Buscar artículos..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-11 w-full rounded-xl border border-input bg-card pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                className="h-11 w-full rounded-xl surface-highest pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-250 border-0"
               />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -118,10 +117,10 @@ export default function Blog() {
                 <button
                   key={c}
                   onClick={() => setCat(c)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-250 ${
                     cat === c
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                      ? "gradient-primary text-primary-foreground shadow-hero"
+                      : "surface-high text-muted-foreground hover:bg-surface-bright"
                   }`}
                 >
                   {c}
@@ -140,20 +139,20 @@ export default function Blog() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="group flex flex-col rounded-2xl border border-border bg-card shadow-card transition-all hover:shadow-card-hover"
+                className="group flex flex-col rounded-2xl surface-high shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright"
               >
                 <div className="flex h-44 items-center justify-center rounded-t-2xl bg-gradient-to-br from-primary/8 via-accent/5 to-primary/5">
                   <span className="text-5xl">{categoryIcons[post.category] || "📄"}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="inline-block w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  <span className="chip w-fit">
                     {post.category}
                   </span>
-                  <h3 className="mt-3 text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                  <h3 className="mt-3 font-display text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors duration-250">
                     {post.title}
                   </h3>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                  <div className="mt-5 flex items-center justify-between pt-4" style={{ borderTop: '1px solid hsl(215 15% 25% / 0.15)' }}>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
                       <span>{post.publishedAt}</span>
@@ -180,19 +179,19 @@ export default function Blog() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="mt-20 rounded-2xl gradient-hero p-10 text-center md:p-14"
           >
-            <h2 className="text-2xl font-bold text-primary-foreground md:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-display text-foreground md:text-3xl">
               Recibí contenido exclusivo en tu inbox
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-primary-foreground/80">
+            <p className="mx-auto mt-3 max-w-md text-muted-foreground">
               Sumate a +2.000 profesionales que reciben nuestras guías semanales.
             </p>
             <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
               <input
                 type="email"
                 placeholder="tu@email.com"
-                className="h-12 flex-1 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-4 text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/30"
+                className="h-12 flex-1 rounded-xl surface-highest px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring border-0"
               />
-              <Button size="lg" className="bg-card text-primary hover:bg-card/90 font-semibold">
+              <Button size="lg">
                 Suscribirme
               </Button>
             </div>

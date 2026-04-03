@@ -23,7 +23,7 @@ export default function Navbar() {
   const isDashboard = pathname.startsWith("/dashboard");
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-lg">
+    <nav className="sticky top-0 z-50 glass">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="Clientum" className="h-9 w-9 rounded-lg" />
@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted ${
+              className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-250 hover:bg-surface-container-high ${
                 pathname === l.to ? "text-primary" : "text-muted-foreground"
               }`}
             >
@@ -65,33 +65,33 @@ export default function Navbar() {
             </Link>
           )}
           <Link to="/planes">
-            <Button size="sm" className="shadow-hero">Comenzar ahora</Button>
+            <Button size="sm">Comenzar ahora</Button>
           </Link>
         </div>
 
         {/* Mobile toggle */}
         <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border bg-card p-4 lg:hidden">
+        <div className="glass-light p-4 lg:hidden">
           <div className="flex flex-col gap-2">
             {navLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className={`rounded-md px-3 py-2 text-sm font-medium ${
-                  pathname === l.to ? "bg-muted text-primary" : "text-muted-foreground"
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-250 ${
+                  pathname === l.to ? "bg-surface-container-high text-primary" : "text-muted-foreground"
                 }`}
               >
                 {l.label}
               </Link>
             ))}
-            <hr className="my-2 border-border" />
+            <div className="my-2 h-px bg-surface-container" />
             {isAuthenticated ? (
               <>
                 <Link to="/dashboard" onClick={() => setOpen(false)}>
@@ -111,7 +111,7 @@ export default function Navbar() {
               </Link>
             )}
             <Link to="/planes" onClick={() => setOpen(false)}>
-              <Button size="sm" className="w-full shadow-hero">Comenzar ahora</Button>
+              <Button size="sm" className="w-full">Comenzar ahora</Button>
             </Link>
           </div>
         </div>

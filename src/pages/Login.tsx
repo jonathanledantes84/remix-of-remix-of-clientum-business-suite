@@ -21,7 +21,7 @@ export default function Login() {
     }
   };
 
-  const inputClass = "h-11 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-shadow";
+  const inputClass = "h-11 w-full rounded-xl surface-highest px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-250 border-0";
 
   return (
     <div className="flex min-h-screen">
@@ -34,10 +34,10 @@ export default function Login() {
           <Link to="/" className="mb-8 inline-block">
             <img src="/logo.png" alt="Clientum" className="h-10 brightness-0 invert" />
           </Link>
-          <h2 className="text-3xl font-bold text-primary-foreground">
+          <h2 className="font-display text-3xl font-bold tracking-display text-foreground">
             Tu plataforma de gestión empresarial
           </h2>
-          <p className="mt-4 text-primary-foreground/70 leading-relaxed">
+          <p className="mt-4 text-muted-foreground leading-relaxed">
             CRM, ERP, BI y automatización en una sola plataforma diseñada para PyMEs argentinas.
           </p>
           <div className="mt-10 space-y-4">
@@ -46,9 +46,9 @@ export default function Login() {
               "Reportes en tiempo real",
               "Automatización inteligente",
             ].map((item) => (
-              <div key={item} className="flex items-center gap-3 text-sm text-primary-foreground/80">
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-foreground/15">
-                  <ArrowRight className="h-3 w-3 text-primary-foreground" />
+              <div key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                  <ArrowRight className="h-3 w-3 text-primary" />
                 </div>
                 {item}
               </div>
@@ -58,7 +58,7 @@ export default function Login() {
       </div>
 
       {/* Right panel - form */}
-      <div className="flex flex-1 items-center justify-center bg-background px-4 py-12">
+      <div className="flex flex-1 items-center justify-center surface-low px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
           className="w-full max-w-sm"
@@ -71,10 +71,10 @@ export default function Login() {
           </div>
 
           <div className="mb-8">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary shadow-hero">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl gradient-primary shadow-hero">
               <LogIn className="h-6 w-6 text-primary-foreground" />
             </div>
-            <h1 className="text-2xl font-bold text-foreground">Bienvenido</h1>
+            <h1 className="font-display text-2xl font-bold tracking-display text-foreground">Bienvenido</h1>
             <p className="mt-1 text-sm text-muted-foreground">Ingresá a tu panel de gestión</p>
           </div>
 
@@ -104,12 +104,12 @@ export default function Login() {
             {error && (
               <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>
             )}
-            <Button type="submit" className="w-full shadow-hero" size="lg">
+            <Button type="submit" className="w-full" size="lg">
               Ingresar
             </Button>
           </form>
 
-          <div className="mt-6 flex items-center gap-2 rounded-xl bg-muted/50 px-4 py-3">
+          <div className="mt-6 flex items-center gap-2 rounded-xl surface-high px-4 py-3">
             <Shield className="h-4 w-4 shrink-0 text-muted-foreground" />
             <p className="text-xs text-muted-foreground">
               Demo: usá cualquier email y contraseña (4+ caracteres)

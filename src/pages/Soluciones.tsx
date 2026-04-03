@@ -71,13 +71,13 @@ export default function Soluciones() {
       <section className="gradient-hero py-24">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">
+            <span className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}>
               Soluciones
             </span>
-            <h1 className="mt-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-display text-4xl font-bold tracking-display text-foreground md:text-5xl lg:text-6xl">
               Tecnología que se adapta a tu negocio
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-primary-foreground/80">
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground" style={{ lineHeight: 1.6 }}>
               Plataforma modular diseñada para crecer con tu empresa, desde el primer contacto hasta la operación completa.
             </p>
           </motion.div>
@@ -88,11 +88,9 @@ export default function Soluciones() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-              Industrias
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-foreground md:text-4xl">Soluciones por sector</h2>
-            <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
+            <span className="section-badge">Industrias</span>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">Soluciones por sector</h2>
+            <p className="mx-auto mt-3 max-w-lg text-muted-foreground" style={{ lineHeight: 1.6 }}>
               Configuraciones específicas y flujos predefinidos para cada industria.
             </p>
           </motion.div>
@@ -105,10 +103,10 @@ export default function Soluciones() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="group rounded-2xl border border-border bg-card p-8 shadow-card transition-all hover:shadow-card-hover"
+                className="group rounded-2xl surface-high p-8 shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright"
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-250 group-hover:bg-primary/20">
                     <ind.icon className="h-7 w-7 text-primary" />
                   </div>
                   <div className="flex-1">
@@ -116,7 +114,7 @@ export default function Soluciones() {
                     <p className="mt-2 text-muted-foreground leading-relaxed">{ind.desc}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {ind.features.map((f) => (
-                        <span key={f} className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                        <span key={f} className="chip">
                           <CheckCircle2 className="h-3 w-3 text-primary" />
                           {f}
                         </span>
@@ -131,13 +129,11 @@ export default function Soluciones() {
       </section>
 
       {/* Capabilities */}
-      <section className="bg-muted/30 py-20">
+      <section className="surface-low py-20">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-              Capacidades
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-foreground md:text-4xl">Capacidades Core</h2>
+            <span className="section-badge">Capacidades</span>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">Capacidades Core</h2>
           </motion.div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {capabilities.map((cap, i) => (
@@ -148,7 +144,7 @@ export default function Soluciones() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="rounded-2xl border border-border bg-card p-8 text-center shadow-card transition-all hover:shadow-card-hover"
+                className="rounded-2xl surface-high p-8 text-center shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright"
               >
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
                   <cap.icon className="h-7 w-7 text-primary" />
@@ -166,15 +162,13 @@ export default function Soluciones() {
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-              <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                Arquitectura
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-bold text-foreground md:text-4xl">Crecé a tu ritmo</h2>
+              <span className="section-badge">Arquitectura</span>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">Crecé a tu ritmo</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Empezá con los módulos que necesitás hoy y escalá sin fricciones a medida que tu empresa crece. Cada nivel se integra perfectamente con los anteriores.
               </p>
               <Link to="/planes" className="mt-6 inline-block">
-                <Button className="shadow-hero">
+                <Button>
                   Ver planes <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -189,14 +183,14 @@ export default function Soluciones() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:shadow-card-hover"
+                  className="flex items-start gap-4 rounded-2xl surface-high p-6 shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                     <lvl.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="chip text-[10px]">
                         Nivel {lvl.level}
                       </span>
                     </div>
@@ -214,16 +208,16 @@ export default function Soluciones() {
       <section className="gradient-hero py-20">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <Layers className="mx-auto mb-4 h-10 w-10 text-accent" />
-            <h2 className="font-display text-3xl font-bold text-primary-foreground md:text-4xl">
+            <Layers className="mx-auto mb-4 h-10 w-10 text-primary" />
+            <h2 className="font-display text-3xl font-bold tracking-display text-foreground md:text-4xl">
               ¿Qué solución necesita tu empresa?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground" style={{ lineHeight: 1.6 }}>
               Agendá una consultoría gratuita y te ayudamos a diseñar la arquitectura ideal para tu negocio.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link to="/contacto">
-                <Button size="lg" variant="secondary" className="shadow-hero px-8">
+                <Button size="lg" className="px-8">
                   Solicitar consultoría <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

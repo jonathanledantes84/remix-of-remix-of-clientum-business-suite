@@ -30,19 +30,19 @@ export default function Testimonios() {
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground"
+            className="section-badge" style={{ background: 'hsl(193 100% 82% / 0.1)', color: 'hsl(193 100% 82%)' }}
           >
             Casos de éxito
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-bold tracking-display text-foreground md:text-5xl lg:text-6xl"
           >
             Lo que dicen nuestros clientes
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80"
+            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
           >
             +500 empresas argentinas confían en Clientum para transformar su gestión.
           </motion.p>
@@ -54,14 +54,14 @@ export default function Testimonios() {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-            className="grid gap-6 rounded-2xl border border-border bg-card p-8 shadow-card-hover sm:grid-cols-3"
+            className="grid gap-6 rounded-2xl surface-high p-8 shadow-card-hover sm:grid-cols-3"
           >
             <div className="flex items-center gap-4 justify-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warning/10">
                 <Star className="h-6 w-6 fill-warning text-warning" />
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-foreground">{avg}/5</div>
+                <div className="font-display text-3xl font-extrabold text-foreground">{avg}/5</div>
                 <div className="text-sm text-muted-foreground">Calificación promedio</div>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Testimonios() {
                 <Users className="h-6 w-6 text-success" />
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-foreground">98%</div>
+                <div className="font-display text-3xl font-extrabold text-foreground">98%</div>
                 <div className="text-sm text-muted-foreground">Nos recomiendan</div>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function Testimonios() {
                 <TrendingUp className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-foreground">+45%</div>
+                <div className="font-display text-3xl font-extrabold text-foreground">+45%</div>
                 <div className="text-sm text-muted-foreground">Aumento promedio en ventas</div>
               </div>
             </div>
@@ -95,10 +95,10 @@ export default function Testimonios() {
               <button
                 key={ind}
                 onClick={() => setIndustry(ind)}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-250 ${
                   industry === ind
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    ? "gradient-primary text-primary-foreground shadow-hero"
+                    : "surface-high text-muted-foreground hover:bg-surface-bright"
                 }`}
               >
                 {ind}
@@ -116,7 +116,7 @@ export default function Testimonios() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="group flex flex-col rounded-2xl border border-border bg-card p-8 shadow-card transition-all hover:shadow-card-hover"
+                className="group flex flex-col rounded-2xl surface-high p-8 shadow-card transition-all duration-250 hover:shadow-card-hover hover:bg-surface-bright"
               >
                 <Quote className="h-8 w-8 text-primary/20" />
 
@@ -128,12 +128,12 @@ export default function Testimonios() {
                   {[...Array(5)].map((_, j) => (
                     <Star
                       key={j}
-                      className={`h-4 w-4 ${j < t.rating ? "fill-warning text-warning" : "text-muted"}`}
+                      className={`h-4 w-4 ${j < t.rating ? "fill-warning text-warning" : "text-surface-container"}`}
                     />
                   ))}
                 </div>
 
-                <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
+                <div className="mt-4 flex items-center gap-3 pt-4" style={{ borderTop: '1px solid hsl(215 15% 25% / 0.15)' }}>
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                     {t.name.split(" ").map((w) => w[0]).join("")}
                   </div>
@@ -151,15 +151,15 @@ export default function Testimonios() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="mt-20 rounded-2xl gradient-hero p-10 text-center md:p-14"
           >
-            <Award className="mx-auto mb-4 h-10 w-10 text-primary-foreground/60" />
-            <h2 className="text-2xl font-bold text-primary-foreground md:text-3xl">
+            <Award className="mx-auto mb-4 h-10 w-10 text-primary" />
+            <h2 className="font-display text-2xl font-bold tracking-display text-foreground md:text-3xl">
               ¿Querés ser el próximo caso de éxito?
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-primary-foreground/80">
+            <p className="mx-auto mt-3 max-w-md text-muted-foreground">
               Sumate a las 500+ empresas que ya transformaron su gestión con Clientum.
             </p>
             <Link to="/planes" className="mt-8 inline-block">
-              <Button size="lg" className="bg-card text-primary hover:bg-card/90 font-semibold shadow-hero">
+              <Button size="lg" className="px-8">
                 Ver planes <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
